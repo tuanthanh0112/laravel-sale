@@ -1,1 +1,1 @@
-# laravel-sale
+## Laravel Inventory
