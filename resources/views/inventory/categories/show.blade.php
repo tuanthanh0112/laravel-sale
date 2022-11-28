@@ -58,10 +58,10 @@
                                     <td><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></td>
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->stock_defective }}</td>
-                                    <td>{{ format_money($product->price) }}</td>
-                                    <td>{{ format_money($product->solds->avg('price')) }}</td>
+                                    {{-- <td>{{ format_money($product->price) }}</td>
+                                    <td>{{ format_money($product->solds->avg('price')) }}</td> --}}
                                     <td>{{ $product->solds->sum('qty') }}</td>
-                                    <td>{{ format_money($product->solds->sum('total_amount')) }}</td>
+                                    {{-- <td>{{ format_money($product->solds->sum('total_amount')) }}</td> --}}
                                     <td class="td-actions text-right">
                                         <a href="{{ route('products.show', $product) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
                                             <i class="tim-icons icon-zoom-split"></i>
