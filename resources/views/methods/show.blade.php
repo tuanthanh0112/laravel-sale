@@ -26,11 +26,11 @@
                                 <td>{{ $method->name }}</td>
                                 <td>{{ $method->description }}</td>
                                 <td>{{ $method->transactions->count() }}</td>
-                                {{-- <td>{{ format_money($balances['daily']) }}</td>
+                                <td>{{ format_money($balances['daily']) }}</td>
                                 <td>{{ format_money($balances['weekly']) }}</td>
                                 <td>{{ format_money($balances['quarter']) }}</td>
                                 <td>{{ format_money($balances['monthly']) }}</td>
-                                <td>{{ format_money($balances['annual']) }}</td> --}}
+                                <td>{{ format_money($balances['annual']) }}</td>
                             </tr>
                         </tbody>
                     </table>

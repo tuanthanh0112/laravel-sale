@@ -33,11 +33,11 @@
                                     <tr>
                                         <td>{{ $period }}</td>
                                         <td>{{ $data->count() }}</td>
-                                        {{-- <td>{{ format_money($data->where('type', 'income')->sum('amount')) }}</td>
+                                        <td>{{ format_money($data->where('type', 'income')->sum('amount')) }}</td>
                                         <td>{{ format_money($data->where('type', 'expense')->sum('amount')) }}</td>
                                         <td>{{ format_money($data->where('type', 'payment')->sum('amount')) }}</td>
                                         <td>{{ format_money($data->where('payment_method_id', optional($methods->where('name', 'Cash')->first())->id)->sum('amount')) }}</td>
-                                        <td>{{ format_money($data->sum('amount')) }}</td> --}}
+                                        <td>{{ format_money($data->sum('amount')) }}</td>
                                         <td></td>
                                     </tr>
                                 @endforeach
@@ -76,7 +76,7 @@
                                     <tr>
                                         <td><a href="{{ route('clients.show', $client) }}">{{ $client->name }}<br>{{ $client->document_type }}-{{ $client->document_id }}</a></td>
                                         <td>{{ $client->sales->count() }}</td>
-                                        {{-- <td>{{ format_money($client->transactions->sum('amount')) }}</td>
+                                        <td>{{ format_money($client->transactions->sum('amount')) }}</td>
                                         <td>
                                             @if ($client->balance > 0)
                                                 <span class="text-success">{{ format_money($client->balance) }}</span>
@@ -85,7 +85,7 @@
                                             @else
                                                 {{ format_money($client->balance) }}
                                             @endif
-                                        </td> --}}
+                                        </td>
                                         <td>
                                             <a href="{{ route('clients.transactions.add', $client) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Register Transation">
                                                 <i class="tim-icons icon-simple-add"></i>
@@ -128,8 +128,8 @@
                                 @foreach($methods as $method)
                                     <tr>
                                         <td><a href="{{ route('methods.show', $method) }}">{{ $method->name }}</a></td>
-                                        {{-- <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->count()) }}</td>
-                                        <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->sum('amount')) }}</td> --}}
+                                        <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->count()) }}</td>
+                                        <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->sum('amount')) }}</td>
                                         <td>
                                             <a href="{{ route('methods.show', $method) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="See Method">
                                                 <i class="tim-icons icon-zoom-split"></i>
@@ -176,8 +176,8 @@
                                 <td>{{ $data->count() }}</td>
                                 <td>{{ $data->groupBy('client_id')->count() }}</td>
                                 <td>{{ $data->where('finalized_at', '!=', null)->map(function ($sale) {return $sale->products->sum('qty');})->sum() }}</td>
-                                {{-- <td>{{ format_money($data->avg('total_amount')) }}</td>
-                                <td>{{ format_money($data->where('finalized_at', '!=', null)->map(function ($sale) {return $sale->products->sum('total_amount');})->sum()) }}</td> --}}
+                                <td>{{ format_money($data->avg('total_amount')) }}</td>
+                                <td>{{ format_money($data->where('finalized_at', '!=', null)->map(function ($sale) {return $sale->products->sum('total_amount');})->sum()) }}</td>
                                 <td>{{ $data->where('finalized_at', null)->count() }}</td>
                             </tr>
                         @endforeach

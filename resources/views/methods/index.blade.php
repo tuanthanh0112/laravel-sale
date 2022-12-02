@@ -32,7 +32,7 @@
                                         <td>{{ $method->name }}</td>
                                         <td>{{ $method->description }}</td>
                                         <td>{{ $method->transactions->count() }}</td>
-                                        {{-- <td>{{ format_money($method->transactions->sum('amount')) }}</td> --}}
+                                        <td>{{ format_money($method->transactions->sum('amount')) }}</td>
                                         <td class="td-actions text-right">
                                             <a href="{{ route('methods.show', $method) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
                                                 <i class="tim-icons icon-zoom-split"></i>

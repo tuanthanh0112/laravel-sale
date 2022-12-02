@@ -28,7 +28,7 @@
                                 <td>{{ $provider->phone }}</td>
                                 <td style="max-width: 175px">{{ $provider->paymentinfo }}</td>
                                 <td>{{ $provider->transactions->count() }}</td>
-                                {{-- <td>{{ format_money(abs($provider->transactions->sum('amount'))) }}</td> --}}
+                                <td>{{ format_money(abs($provider->transactions->sum('amount'))) }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -59,7 +59,7 @@
                                     <td>{{ $transaction->id }}</td>
                                     <td>{{ $transaction->title }}</td>
                                     <td><a href="{{ route('methods.show', $transaction->method) }}">{{ $transaction->method->name }}</a></td>
-                                    {{-- <td>{{ format_money($transaction->amount) }}</td> --}}
+                                    <td>{{ format_money($transaction->amount) }}</td>
                                     <td>{{ $transaction->reference }}</td>
                                 </tr>
                             @endforeach
